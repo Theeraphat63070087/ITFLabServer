@@ -1,19 +1,22 @@
 <?php
 
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'theeraphat63070087.mysql.database.azure.com', 'theeraphat55@theeraphat63070087', 'As0986782884!', 'ITFLab', 3306);
+mysqli_real_connect($conn, 'itflabbyaum.mysql.database.azure.com', 'theeraphat@itflabbyaum', 'As0986782884!', 'itflabbyaum', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 
 
-$name = $_POST['name'];
-$comment = $_POST['comment'];
-$link = $_POST['link'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$gender = $_POST['gender'];
+$age = $_POST['age'];
+$phonenumber = $_POST['phonenumber'];
+$email = $_POST['email'];
 
 
-$sql = "INSERT INTO guestbook (Name , Comment , Link) VALUES ('$name', '$comment', '$link')";
+$sql = "INSERT INTO guestbook (firstname , lastname , gender , age , phonenumber , email) VALUES ('$firstname', '$lastname', '$gender', $age, $phonenumber, $email)";
 
 
 if (mysqli_query($conn, $sql)) {
