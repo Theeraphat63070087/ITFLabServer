@@ -5,12 +5,12 @@
 <body>
 <?php
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'itflabbyaum.mysql.database.azure.com', 'theeraphat@itflabbyaum', 'As0986782884!', 'itflabbyaum', 3306);
+mysqli_real_connect($conn, 'panwit.mysql.database.azure.com', 'panwit@panwit', '123456789', 'itflab', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-$res = mysqli_query($conn, 'SELECT * FROM guestbook');
+$res = mysqli_query($conn, 'SELECT * FROM guestbook2');
 ?>
 <table width="600" border="1">
   <tr>
@@ -23,12 +23,9 @@ while($Result = mysqli_fetch_array($res))
 {
 ?>
   <tr>
-    <td><?php echo $Result['firstname'];?></div></td>
-    <td><?php echo $Result['lastname'];?></td>
-    <td><?php echo $Result['gender'];?></td>
-    <td><?php echo $Result['age'];?></td>
-    <td><?php echo $Result['phonenumber'];?></td>
-    <td><?php echo $Result['email'];?></td>
+    <td><?php echo $Result['Name'];?></div></td>
+    <td><?php echo $Result['Comment'];?></td>
+    <td><?php echo $Result['Link'];?></td>
   </tr>
 <?php
 }
